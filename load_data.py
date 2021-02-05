@@ -16,8 +16,8 @@ def load_CIFAR_batch(filename):
         datadict = pickle.load(f, encoding='latin1')
         X = datadict['data']
         Y = datadict['labels']
-        X = X.reshape(10000, 3, 32, 32).astype("float")
-        Y = np.array(Y)
+        X = X.reshape(10000, 3, 32, 32).astype("float32")
+        Y = np.array(Y).astype("int64")
         return X, Y
 
 def load_CIFAR10(ROOT):
